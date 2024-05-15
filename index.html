@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title">
+    
+        <h1>Photo Gallery</h1>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <button id="nextBtn">Next</button>
+      </div>
+      
+      <div class="landing-page">
+        <img src="images/landing.jpg" class="landing-img" onclick="openModal('images/landing.jpg')">
+        <div class="center"><b>Discover <br><span style="color: rgb(239, 189, 96);">Aestheticism</span>  </b></div>
+        <img src="images/img2.jpg" class="landing-img" onclick="openModal('images/img2.jpg')">
+        <img src="images/img1.jpg" class="landing-img" onclick="openModal('images/img1.jpg')">
+
+    </div>
+    
+
+    <div class="grid-box">
+        <div class="image-container">
+            <img src="images/dog.jpg" class="img" alt="">
+        </div>
+        <div class="image-container">
+            <img src="images/FullMoon2010.jpg" class="img" alt="">
+        </div>
+        <div class="image-container">
+            <img src="images/mount fuji.jpg" class="img" alt="">
+        </div>
+        <div class="image-container">
+            <img src="images/vaundy.jpeg" class="img" alt="">
+        </div>
+        <div class="image-container">
+            <img src="images/layout.jpg" class="img" alt="">
+        </div>
+        <div class="image-container">
+            <img src="images/clorinde.png" class="img" alt="">
+        </div>
+    </div>
+<footer class="footer">    
+    &copy Photo Gallery All rights reserved 
+</footer>
+<script>
+    var modal = document.getElementById("myModal");
+    var images = document.querySelectorAll(".landing-img");
+    var currentIndex = 0;
+    
+    var img = document.getElementById("img01");
+    function openModal(imagePath) {
+      modal.style.display = "block";
+      img.src = imagePath;
+      currentIndex = Array.from(images).indexOf(img);
+      toggleImageVisibility(currentIndex);
+    }
+    
+    function toggleImageVisibility(index) {
+      images.forEach((image, i) => {
+        if (i === currentIndex) {
+          image.style.display = "block";
+        } else {
+          image.style.display = "none";
+        }
+      });
+    }
+    
+    var span = document.getElementsByClassName("close")[0];
+    var nextBtn = document.getElementById("nextBtn");
+    
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    nextBtn.onclick = function() {
+      currentIndex++;
+      if (currentIndex >= images.length) {
+        currentIndex = 0;
+      }
+      img.src = images[currentIndex].src;
+      toggleImageVisibility(currentIndex);
+    }
+    </script>
+    
+    
+</body>
+</html>

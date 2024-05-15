@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+
+body{
+    height: 100vh;
+    text-align: center;
+    background-color: black;
+    font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+
+}
+.title{
+    background-color: rgb(99, 34, 34);
+    color: wheat;
+    padding: 2%;
+    font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+}
+.landing-page{
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    background-color: antiquewhite;
+    width: 100%;
+    height: auto;
+}
+
+.landing-img{
+    width: 100%;
+    height: 25%;
+    transition: .3s;
+}
+.landing-img:hover{
+    transform: scale(1.01);
+}
+.center{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+    line-height: 2em;
+
+}
+.grid-box{
+    /* display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 50px;
+    margin: 5%;
+}
+
+.img{
+    width: 95%;
+    height: 85%;
+    border: 20px solid black;
+
+}
+
+.image-container{
+    transition: 0.3s;
+}
+.image-container:hover{
+    transform: scale(1.1);
+}
+.landing-img:not(:first-child) {
+    display: none;
+  }
+  
+.footer{
+  background-color: rgb(99, 34, 34);
+  color: wheat;
+  padding: 2%;
+  font-size: 14px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #nextBtn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 7px 14px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+   
+  #nextBtn:hover {
+    background-color: #45a049; 
+  }
+  
+  
+  .modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  .modal-content, .modal-caption {  
+    animation-name: zoom;
+    animation-duration: 0.5s;
+  }
+  
+  @keyframes zoom {
+    from {
+      transform: scale(0) 
+    }
+    to {
+      transform: scale(1)
+    }
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }
+  }
+
